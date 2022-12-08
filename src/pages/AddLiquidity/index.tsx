@@ -131,19 +131,19 @@ export default function AddLiquidity({
     if (!parsedAmountA || !parsedAmountB || !currencyA || !currencyB) {
       return
     }
-    
+
     const amountsMin = {
       [Field.CURRENCY_A]: calculateSlippageAmount(parsedAmountA, noLiquidity ? 0 : allowedSlippage)[0],
       [Field.CURRENCY_B]: calculateSlippageAmount(parsedAmountB, noLiquidity ? 0 : allowedSlippage)[0],
     }
-    
+
     const deadlineFromNow = (Math.ceil(Date.now() / 1000) + deadline)
 
     let estimate
     let method: (...args: any) => Promise<TransactionResponse>
     let args: Array<string | string[] | number>
     let value: BigNumber | null
-    
+
     if (currencyA === ETHER || currencyB === ETHER) {
       const tokenBIsOKT = currencyB === ETHER
       estimate = router.estimateGas.addLiquidityETH
@@ -285,7 +285,7 @@ export default function AddLiquidity({
           history.push(`/add/${newCurrencyIdB}`)
         }
       } else {
-        history.push(`/add/${currencyIdA || 'OKT'}/${newCurrencyIdB}`)
+        history.push(`/add/${currencyIdA || 'BNB'}/${newCurrencyIdB}`)
       }
     },
     [currencyIdA, history, currencyIdB]

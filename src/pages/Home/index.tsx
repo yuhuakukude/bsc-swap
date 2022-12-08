@@ -21,10 +21,9 @@ const HomePage = () => {
           <HomeBanner title='MangoSwap' describe={intl('home.topText') } />
           <Statistics />
           <Search />
-          <Pools />
         </PageContainerStyle>
       </PoolPage>
-      
+
     </ThemeProvider>
   )
 }

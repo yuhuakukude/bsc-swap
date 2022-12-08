@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import useIntl from 'hooks/useIntl'  
+import useIntl from 'hooks/useIntl'
 import { Menu as UikitMenu } from 'uikit'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppState } from 'state'
@@ -17,15 +17,13 @@ import { CAKE } from '../../constants'
 const Menu: React.FC = (props) => {
   const intl = useIntl()
   const dispatch = useDispatch()
-  const priceData = useGetPriceData()
   const { account } = useWeb3React()
   const { login, logout } = useAuth()
   const { isDark, toggleTheme } = useTheme()
-  const cakePriceUsd = priceData ? Number(priceData.data[CAKE.address].price) : undefined
   const profile = useGetLocalProfile()
   const { selectedLanguage } = useSelector((state: AppState) => state.locales)
   const setLang = (value: selectedLanguageType) => {
-    selectLocalesAsync(value)(dispatch) 
+    selectLocalesAsync(value)(dispatch)
   }
   return (
     <UikitMenu
@@ -34,13 +32,12 @@ const Menu: React.FC = (props) => {
       })}
       account={account as string}
       login={login}
-      logout={logout} 
+      logout={logout}
       isDark={isDark}
       toggleTheme={toggleTheme}
       currentLang={selectedLanguage}
       langs={allLanguages}
       setLang={setLang}
-      cakePriceUsd={cakePriceUsd}
       profile={profile}
       {...props}
     />

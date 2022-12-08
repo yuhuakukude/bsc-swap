@@ -10,8 +10,8 @@ import BigNumber from 'bignumber.js'
 
 // Pool 0, Cake / Cake is a different kind of contract (master chef)
 // OKT pools use the native OKT token (wrapping ? unwrapping is done at the contract level)
-const nonBnbPools = poolsConfig.filter((p) => p.stakingToken.symbol !== 'OKT')
-const bnbPools = poolsConfig.filter((p) => p.stakingToken.symbol === 'OKT')
+const nonBnbPools = poolsConfig.filter((p) => p.stakingToken.symbol !== 'BNB')
+const bnbPools = poolsConfig.filter((p) => p.stakingToken.symbol === 'BNB')
 const nonMasterPools = poolsConfig.filter((p) => p.sousId !== 0)
 const web3 = getWeb3NoAccount()
 const masterChefContract = new web3.eth.Contract((masterChefABI as unknown) as AbiItem, getMasterChefAddress())

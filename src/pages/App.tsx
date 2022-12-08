@@ -37,16 +37,6 @@ const BodyWrapper = styled.div`
 
 export default function App() {
   const { chainId, active } = useActiveWeb3React2()
-  // 初始化获取价格
-  useFetchPriceList()
-  usePoolFetchPublicData()
-
-  useEffect(() => {
-    // const storedLangCode = localStorage.getItem(CACHE_KEY)
-    // if (storedLangCode) {
-    //   setLocale(storedLangCode)
-    // }
-  }, [])
 
   useEffect(() => {
     if (chainId) {
@@ -54,7 +44,6 @@ export default function App() {
     }
   }, [chainId, active])
 
-  useGetDocumentTitlePrice()
   return (
     <Suspense fallback={null}>
       <HashRouter>

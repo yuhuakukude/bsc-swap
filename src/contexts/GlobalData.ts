@@ -47,7 +47,7 @@ export default async function getTokensOnswap ({ skip = 0 }: GraphTokenParams) {
 export async function getPairsOnswap ({ skip = 0 }: GraphPairsParams) {
   const utcCurrentTime = dayjs.unix(Date.now() / 1000)
   const utcOneHourBack = utcCurrentTime.subtract(3, 'day').startOf('minute').unix()
-  const oneHourBlock = await getBlockFromTimestamp(utcOneHourBack)
+  //const oneHourBlock = await getBlockFromTimestamp(utcOneHourBack)
 
   try {
     let allFound = false

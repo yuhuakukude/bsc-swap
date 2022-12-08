@@ -72,10 +72,10 @@ export const ConnectToChain = async (chainId: number, isFirst = false) => {
   const ChainInfo = [
     {
       chainId: `0x${NETWORK_CHAIN_ID.toString(16)}`,
-      chainName: NETWORK_CHAIN_ID === 65 ? "OKT Test Chain" : "OKT Chain Mainnet",
+      chainName: NETWORK_CHAIN_ID === 65 ? "BSC Test Chain" : "BSC Chain Mainnet",
       nativeCurrency: {
-        name: "OKT",
-        symbol: "OKT",
+        name: "BNB",
+        symbol: "Binance",
         decimals: 18,
       },
       rpcUrls: [NETWORK_CHAIN_ID === 65 ? 'https://exchaintestrpc.okex.org' : 'https://exchainrpc.okex.org'],
